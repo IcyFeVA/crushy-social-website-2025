@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Crushy Social
+  site: 'https://crushy.social'
   base: '/'
   trailingSlash: false
 
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
+    default: Crushy Social
     template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "\U0001F680 Crushy is the friend and date-finding app that puts people first. Whether you're diving deep for real connections or surfing for something casual, Crushy lets you connect with no limits—no paywalls."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: CrushySocial
     images:
       - url: '~/assets/images/default.png'
         width: 1200
