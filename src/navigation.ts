@@ -49,7 +49,7 @@ export const headerData = {
     },
     {
       text: 'Blog',
-      href: '#',
+      href: getPermalink('/blog'),
     },
   ],
   // actions: [{ text: 'Download the App', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
@@ -60,7 +60,7 @@ export const footerData = {
     {
       title: 'Product',
       links: [
-        { text: 'Features', href: '#features' },
+        { text: 'Features', href: getPermalink('/') },
       ],
     },
     {
@@ -81,9 +81,9 @@ export const footerData = {
     {
       title: 'Company',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
+        { text: 'About', href: getPermalink('/about') },
+        { text: 'Blog', href: getPermalink('/blog') },
+        // { text: 'Careers', href: '#' },
         // { text: 'Press', href: '#' },
       ],
     },
