@@ -3,9 +3,12 @@ import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
+
+// Replace YOUR_FORM_ID with your actual Formspree form ID
+const FORM_ENDPOINT = "https://formspree.io/f/mrbbqoyk";
 ---
 
-<form>
+<form method="POST" action={FORM_ENDPOINT}>
   {
     inputs &&
       inputs.map(
