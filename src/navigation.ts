@@ -58,16 +58,12 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Product',
-      links: [
-        { text: 'Features', href: getPermalink('/') },
-      ],
+      title: 'We’re here to help you connect, one vibe at a time. Reach out to us anytime.',
     },
     {
       title: 'Platform',
       links: [
-        { text: 'Terms', href: getPermalink('/terms') },
-        { text: 'Privacy Policy', href: getPermalink('/privacy') },
+        { text: 'Features', href: "/#features" },
       ],
     },
     {
@@ -88,10 +84,10 @@ export const footerData = {
       ],
     },
   ],
-  // secondaryLinks: [
-  //   { text: 'Terms', href: getPermalink('/terms') },
-  //   { text: 'Privacy Policy', href: getPermalink('/privacy') },
-  // ],
+  secondaryLinks: [
+    { text: 'Terms', href: getPermalink('/terms') },
+    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+  ],
   socialLinks: [
     { ariaLabel: 'TikTok', icon: 'tabler:brand-tiktok', href: '#' },
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
