@@ -10,7 +10,7 @@ site:
 metadata:
   title:
     default: Crushy Social
-    template: '%s — AstroWind'
+    template: '%s' # title meta tag
   description: "\U0001F680 Crushy is the friend and date-finding app that puts people first. Whether you're diving deep for real connections or surfing for something casual, Crushy lets you connect with no limits—no paywalls."
   robots:
     index: true
@@ -18,9 +18,9 @@ metadata:
   openGraph:
     site_name: CrushySocial
     images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+      - url: '~/assets/images/banner.logo.crushy.png'
+        width: 600
+        height: 314
     type: website
   twitter:
     handle: '@onwidget'
