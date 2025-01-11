@@ -2,14 +2,9 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
@@ -110,6 +105,28 @@ const metadata = {
     </div>
     <div class="h-20"></div>
   </div>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Take our survey',
+        href: 'https://app.youform.com/forms/rtbjam4f',
+        target: '_blank',
+        icon: 'tabler:chevron-right',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      We value your feedback!
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Help us improve by taking a quick survey. Your insights are invaluable to us.
+    </Fragment>
+  </CallToAction>
 
   <!-- HighlightedPosts Widget ******* -->
 
