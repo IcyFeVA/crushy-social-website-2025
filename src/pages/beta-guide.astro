@@ -1,0 +1,140 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Note from '~/components/widgets/Note.astro';
+
+const metadata = {
+  title: 'Beta Testing Guide - Crushy',
+  description: 'Learn how to participate in Crushy\'s closed beta testing program. Get instructions for installing the beta app on Android and iOS.',
+};
+
+const betaFAQs = {
+  title: 'Frequently Asked Questions',
+  subtitle: 'Everything you need to know about the beta testing program',
+  columns: 1,
+  items: [
+    {
+      title: 'How long will the beta testing period last?',
+      description: 'The beta testing period is expected to last several weeks. During this time, we\'ll be actively collecting feedback and making improvements to the app.',
+    },
+    {
+      title: 'Will my data be saved when the app launches officially?',
+      description: 'We wil definitely do our best to preserve your data, along with your bio and photos.',
+    },
+    {
+      title: 'How can I report bugs or give feedback?',
+      description: 'You can report bugs and provide feedback directly through the app using the feedback button, or by emailing us at <a href="mailto:hi@crushy.ca" class="text-primary hover:underline">hi@crushy.ca</a>. We greatly value your input!',
+    },
+    {
+      title: 'Can I invite my friends to the beta?',
+      description: 'Currently, the beta is closed and by invitation only. However, you can tell your friends to sign up for the waitlist here <a href="https://app.youform.com/forms/vtpxsto2" target="_blank" class="text-primary hover:underline">https://app.youform.com/forms/vtpxsto2</a>.',
+    },
+    {
+      title: 'What happens if I encounter a serious bug?',
+      description: 'If you encounter any serious issues, please report them immediately through the app or via email. Include as much detail as possible about what happened and the steps to reproduce the issue.',
+    }
+  ]
+};
+
+const installationSteps = {
+  title: 'Installation Guide',
+  subtitle: 'Follow these steps to install the beta version on your device',
+  items: [
+    {
+      title: 'Android Installation',
+      description: `
+        1. Enable "Install from Unknown Sources" in your device settings <a href="https://support.google.com/android/answer/9037711?hl=en" target="_blank" class="text-primary hover:underline">Android Phones</a> or <a href="https://www.youtube.com/watch?v=tUeplcWoVNw" target="_blank" class="text-primary hover:underline">Samsung Specific</a>
+        <br>2. Download the APK file from the link we'll send you
+        <br>3. Open the downloaded file and click "Install"
+        <br>4. Follow the installation prompts
+        <br>5. Open Crushy and sign in with your beta tester credentials
+      `,
+      icon: 'tabler:brand-android'
+    },  
+    {
+      title: 'iOS Installation',
+      description: `
+        1. Download TestFlight from the App Store
+        <br>2. Click the beta invitation link we'll send you
+        <br>3. Open the link in TestFlight
+        <br>4. Install Crushy through TestFlight
+        <br>5. Launch the app and sign in with your beta credentials
+      `,
+      icon: 'tabler:brand-apple'
+    }
+  ]
+};
+
+const betaFeatures = {
+  title: 'What to Expect',
+  subtitle: 'Important information about the beta testing experience',
+  items: [
+    {
+      title: 'Work in Progress',
+      description: 'Features may be incomplete or change significantly based on feedback.',
+      icon: 'tabler:tool'
+    },
+    {
+      title: 'Regular Updates',
+      description: 'Expect frequent app updates as we implement improvements and fix bugs.',
+      icon: 'tabler:refresh'
+    },
+    {
+      title: 'Limited Features',
+      description: 'Some features may be disabled or restricted during the beta period.',
+      icon: 'tabler:lock'
+    },
+    {
+      title: 'Your Impact',
+      description: 'Your feedback directly influences the app\'s development and future features.',
+      icon: 'tabler:message-star'
+    }
+  ]
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Beta Testing Introduction -->
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-8 font-heading dark:text-gray-200">
+      Welcome to Crushy Beta Testing
+    </h1>
+    <div class="max-w-3xl mx-auto">
+      <p class="text-xl text-gray-600 mb-8 dark:text-slate-400">
+        We're excited to have you as a beta tester! Your feedback will help us create the best possible dating experience. 
+        Please read this guide carefully to get started.
+      </p>
+    </div>
+  </section>
+
+  <!-- Important Note -->
+  <Note>
+    <span slot="content" class="font-bold">
+      Beta Notice: Features and functionality may change during the testing period. Your feedback is valuable!
+    </span>
+  </Note>
+
+  <!-- Installation Steps -->
+  <Steps2 {...installationSteps} />
+
+  <!-- What to Expect -->
+  <Features {...betaFeatures} />
+
+  <!-- FAQ Section -->
+  <FAQs {...betaFAQs} />
+
+  <!-- Contact Section -->
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <div class="flex flex-col items-center p-4 py-6 text-center rounded-md md:p-8">
+      <h2 class="mb-2 text-xl font-bold text-gray-900 dark:text-gray-200 md:text-3xl">
+        Need Help?
+      </h2>
+      <p class="text-gray-600 dark:text-slate-400">
+        If you need any assistance during the beta testing period, don't hesitate to reach out to our support team at
+        <a href="mailto:hi@crushy.ca" class="text-primary hover:underline">hi@crushy.ca</a>
+      </p>
+    </div>
+  </section>
+</Layout> 
