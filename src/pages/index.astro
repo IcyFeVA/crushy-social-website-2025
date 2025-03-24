@@ -1,11 +1,13 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import alphaBadge from '~/assets/images/ALPHA_Startup.webp';
 
 const metadata = {
   title: 'Crushy — The friend and date-finding app that puts people first.',
@@ -20,7 +22,7 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Sign up for testing',
+        text: 'Get early access',
         href: 'https://app.youform.com/forms/vtpxsto2',
         target: '_blank',
         icon: 'tabler:chevron-right',
@@ -38,6 +40,49 @@ const metadata = {
     </Fragment>
   </Hero>
 
+  <!-- WebSummit Section ************* -->
+  <section class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="flex-1 text-center md:text-left">
+          <div class="text-sm font-semibold text-accent mb-2">WebSummit Vancouver 2024</div>
+          <h2 class="text-4xl font-bold mb-4">
+            Meet us at <span class="text-accent highlight">WebSummit</span>
+          </h2>
+          <p class="text-xl text-gray-300 mb-6">
+            We're excited to be part of the ALPHA startup program at WebSummit Vancouver this May! Come visit our booth to experience Crushy firsthand and learn how we aim to disrupt the dating app industry.
+          </p>
+          <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+            <a
+              href="https://vancouver.websummit.com/"
+              target="_blank"
+              class="inline-flex items-center px-6 py-3 rounded-full bg-accent text-white hover:bg-accent/90 transition-colors font-medium"
+            >
+              Learn more about WebSummit
+              <i class="tabler:chevron-right ml-2"></i>
+            </a>
+            <a
+              href="https://app.youform.com/forms/vtpxsto2"
+              target="_blank"
+              class="inline-flex items-center px-6 py-3 rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-colors font-medium"
+            >
+              Sign up for early access
+              <i class="tabler:chevron-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center">
+          <Image
+            src={alphaBadge}
+            alt="ALPHA Startup Badge"
+            class="max-w-xs w-full h-auto"
+            width={300}
+            height={300}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Features Widget *************** -->
 
@@ -120,11 +165,11 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      We value your feedback!
+      Help us shape the future of dating apps!
     </Fragment>
 
     <Fragment slot="subtitle">
-      Help us improve by taking a quick survey. Your insights are invaluable to us.
+      Please take this quick survey. Your insights are invaluable to us.
     </Fragment>
   </CallToAction>
 
@@ -211,11 +256,11 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Be the first to test Crushy!
+      Be one of the first to experience Crushy!
     </Fragment>
 
     <Fragment slot="subtitle">
-      Be one of the first to experience Crushy! Sign up as a beta tester now and help shape the future of connection.
+      Sign up for early access now and help shape the app.
     </Fragment>
   </CallToAction>
 </Layout>
