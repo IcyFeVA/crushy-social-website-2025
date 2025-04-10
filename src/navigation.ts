@@ -53,6 +53,7 @@ export const headerData = {
     },
   ],
   // actions: [{ text: 'Download the App', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  actions: [{ text: '2025 Dating App Analysis', href: getPermalink('/research/dating-app-pain-points') }],
 };
 
 export const footerData = {
