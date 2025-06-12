@@ -8,8 +8,6 @@ _Last updated_: June 12, 2025
 Please read these terms and conditions carefully before using Our Service.
 
 
-### 📄 **Terms of Use Template**
-
 **Effective Date:** June 12, 2025
 
 Welcome to Crushy. These Terms govern your use of our app and services. By using Crushy, you agree to these Terms.

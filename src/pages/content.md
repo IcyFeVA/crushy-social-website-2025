@@ -1,12 +1,10 @@
 ---
-title: 'Terms and Conditions'
+title: 'Content Moderation Policy'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
 _Last updated_: June 12, 2025
 
-
-### 📄 **Content Moderation Policy**
 
 Crushy is a platform built on trust, safety, and respect. This policy outlines our approach to moderating user-generated content, including images, messages, and profiles.
 
