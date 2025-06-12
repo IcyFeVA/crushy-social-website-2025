@@ -3,7 +3,7 @@ title: 'Terms and Conditions'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated_: January 06, 2023
+_Last updated_: June 12, 2025
 
 
 ### 📄 **Content Moderation Policy**
