@@ -1,13 +1,11 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import { Image } from 'astro:assets';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import alphaBadge from '~/assets/images/ALPHA_Startup.webp';
+import Content from '~/components/widgets/Content.astro';
 
 const metadata = {
   title: 'Crushy — The friend and date-finding app that puts people first.',
@@ -39,6 +37,21 @@ const metadata = {
       Whether you're looking for friendship or something more,<br>Crushy helps you find your people, your way.
     </Fragment>
   </Hero>
+
+  <!-- About Section ***************** -->
+  <Content
+    tagline="About Crushy"
+    title="Meeting people shouldn't suck."
+    classes={{ container: 'max-w-6xl' }}
+  >
+    <Fragment slot="content">
+        Crushy was born out of one simple truth: meeting people shouldn't suck. Whether you're looking for a date, a friend, or just someone who also thinks pineapple on pizza is a crime, Crushy connects humans—without the cringe.
+        <br /><br />
+        We ditched the endless swiping, added perks (literally—discounts at cool spots), and made an app that actually feels good to use.
+        <br /><br />
+        Headquartered in Canada (yes, we say sorry a lot), Crushy is on a mission to help people connect in meaningful, fun, and refreshingly new ways.
+    </Fragment>
+  </Content>
 
   <!-- WebSummit Section ************* -->
   <!-- <section class="bg-gray-900 text-white py-16">
