@@ -3,17 +3,54 @@
 ---
 
 <div
-  class="dark text-muted text-sm bg-white dark:bg-transparent dark:border-b dark:border-slate-800 dark:text-slate-400 flex gap-1 overflow-hidden px-3 py-2 relative text-ellipsis sm:bg-black sm:text-slate-400 justify-center"
+  class="dark text-muted text-sm bg-white dark:bg-transparent dark:border-b dark:border-slate-800 dark:text-slate-400 flex gap-1 overflow-hidden px-3 py-2 relative text-ellipsis sm:bg-black sm:text-slate-400 justify-between items-center"
 >
-  <span
-    class="dark:bg-orange-700 bg-white/40 dark:text-white font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 tracking-wide"
-    >SURVEY</span
-  >
-  <a href="https://app.youform.com/forms/rtbjam4f" target="_blank" class="text-muted hover:underline dark:text-slate-400 font-medium"
+  <div class="flex gap-1 items-center">
+    <span
+      class="dark:bg-orange-700 bg-white/40 dark:text-white font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 tracking-wide"
+      >SURVEY</span
     >
-    <span class="hidden sm:block">Tell us what the perfect friend & dating app should be »</span>
-    <span class="block sm:hidden">Help us build the perfect app »</span>
-    </a
-  >
-  </a>
+    <a href="https://app.youform.com/forms/rtbjam4f" target="_blank" class="text-muted hover:underline dark:text-slate-400 font-medium"
+      >
+      <span class="hidden sm:block">Tell us what the perfect friend & dating app should be »</span>
+      <span class="block sm:hidden">Help us build the perfect app »</span>
+    </a>
+  </div>
+  
+  <!-- Countdown Timer -->
+  <div class="flex items-center gap-2 text-xs font-mono">
+    <span class="hidden sm:block text-orange-500 font-semibold">LAUNCH:</span>
+    <div id="countdown" class="flex gap-1">
+      <span id="days" class="bg-orange-600 text-white px-1 rounded">000</span>d
+      <span id="hours" class="bg-orange-600 text-white px-1 rounded">00</span>h
+      <span id="minutes" class="bg-orange-600 text-white px-1 rounded">00</span>m
+      <span id="seconds" class="bg-orange-600 text-white px-1 rounded">00</span>s
+    </div>
+  </div>
 </div>
+
+<script>
+  function updateCountdown() {
+    const targetDate = new Date('2025-09-12T00:00:00').getTime();
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    if (difference > 0) {
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days.toString().padStart(3, '0');
+      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    } else {
+      document.getElementById('countdown').innerHTML = '<span class="text-green-500 font-bold">LAUNCHED!</span>';
+    }
+  }
+
+  // Update countdown every second
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
