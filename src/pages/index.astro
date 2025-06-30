@@ -20,9 +20,8 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get early access',
-        href: 'https://app.youform.com/forms/vtpxsto2',
-        target: '_blank',
+        text: 'Join the waitlist',
+        href: '#waitlist-section',
         icon: 'tabler:chevron-right',
       },
       { text: 'Learn more', href: '#features' },
@@ -30,26 +29,169 @@ const metadata = {
     image={{ src: '~/assets/images/hero-friends2.png', alt: 'Hero Image' }}
   >
     <Fragment slot="title">
-      The Social Networking App<br>That Puts <span class="text-accent highlight">People First</span>.
+      The Social Networking App<br />That Puts <span class="text-accent highlight">People First</span>.
     </Fragment>
 
     <Fragment slot="subtitle">
-      Whether you're looking for friendship or something more,<br>Crushy helps you find your people, your way.
+      Whether you're looking for friendship or something more,<br />Crushy helps you connect, your way.
     </Fragment>
   </Hero>
 
   <!-- About Section ***************** -->
+  <Content tagline="About Crushy" title="Meeting people shouldn't suck." classes={{ container: 'max-w-6xl' }}>
+    <Fragment slot="content">
+      Crushy was born out of one simple truth: meeting people shouldn't suck. Whether you're looking for <i>a friend</i>, <i>a
+      date</i>, <i>a mom-friend</i>, or just someone who also thinks pineapple on pizza is a crime, Crushy connects you, your way.
+      <br /><br />
+      We ditched the algorithms, added free search, new modes, and perks (literally—discounts at cool spots), and made an app that actually feels
+      good to use.
+      <br /><br />
+      Headquartered in Vancouver, Canada (yes, we say sorry a lot), Crushy is on a mission to help people connect in meaningful, fun,
+      and refreshingly new ways.
+    </Fragment>
+  </Content>
+
+  <!-- Join Waitlist Section ********* -->
   <Content
-    tagline="About Crushy"
-    title="Meeting people shouldn't suck."
+    tagline="Join the Waitlist"
+    title="Be first to know when we expand"
     classes={{ container: 'max-w-6xl' }}
+    id="waitlist-section"
   >
     <Fragment slot="content">
-        Crushy was born out of one simple truth: meeting people shouldn't suck. Whether you're looking for a date, a friend, or just someone who also thinks pineapple on pizza is a crime, Crushy connects humans—without the cringe.
-        <br /><br />
-        We ditched the endless swiping, added perks (literally—discounts at cool spots), and made an app that actually feels good to use.
-        <br /><br />
-        Headquartered in Canada (yes, we say sorry a lot), Crushy is on a mission to help people connect in meaningful, fun, and refreshingly new ways.
+      <div id="mc_embed_shell">
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+          #mc_embed_signup {
+            background: #fff;
+            clear: left;
+            font:
+              14px 'Poppins',
+              'Helvetica Neue',
+              Helvetica,
+              Arial,
+              sans-serif;
+            max-width: 500px;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+          }
+          #mc_embed_signup_scroll h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-align: center;
+          }
+          .waitlist-select, .waitlist-input {
+            background-color: #fff;
+            border-radius: 4px !important;
+            padding: 8px;
+            border: 1px solid #ccc !important;
+            height: 40px !important;
+          }
+          .btn-primary {
+            border-radius: 99px !important;
+            padding: 8px;
+            border: 1px solid #ccc;
+            height: 48px !important;
+            margin-right: 8px !important;
+          }
+        </style>
+        <div id="mc_embed_signup">
+          <form
+            action="https://crushy.us12.list-manage.com/subscribe/post?u=801f3e334760196f67cc2d80b&id=c302279f53&f_id=004743e0f0"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="validate"
+            target="_blank"
+          >
+            <div id="mc_embed_signup_scroll">
+              <h2>We will launch in Vancouver first. Join our waitlist and get notified as soon as we expand to your place.</h2>
+              <!-- <div class="indicates-required"><span class="asterisk">*</span> indicates required</div> -->
+              <div class="mc-field-group">
+                <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                <input
+                  type="email"
+                  name="EMAIL"
+                  class="required email waitlist-input"
+                  id="mce-EMAIL"
+                  required=""
+                  value=""
+                />
+              </div>
+              <div class="mc-field-group">
+                <label for="mce-MMERGE7">Where do you live? <span class="asterisk">*</span></label>
+                <select
+                  name="MMERGE7"
+                  class="required waitlist-select"
+                  id="mce-MMERGE7"
+                  >
+                    <option value=""></option>
+                    <option value="Canada - British Columbia">Canada - British Columbia</option>
+                    <option value="Canada - Other Province">Canada - Other Province</option>
+                    <option value="USA">USA</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Somewhere else">Somewhere else</option>
+                  </select>
+              </div>
+              <div id="mce-responses" class="clear foot">
+                <div class="response" id="mce-error-response" style="display: none;"></div>
+                <div class="response" id="mce-success-response" style="display: none;"></div>
+              </div>
+              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                /* real people should not fill this in and expect good things - do not remove this or risk form bot
+                signups */
+                <input type="text" name="b_801f3e334760196f67cc2d80b_c302279f53" tabindex="-1" value="" />
+              </div>
+              <div class="optionalParent">
+                <div class="clear foot">
+                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn-primary w-full rounded-full sm:mb-0" value="Join the waitlist" />
+                  <p style="margin: 0px auto;">
+                    <a href="http://eepurl.com/i6SRGs" title="Mailchimp - email marketing made easy and fun"
+                      ><span style="display: inline-block; background-color: transparent; border-radius: 4px;"
+                        ><img
+                          class="refferal_badge"
+                          src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
+                          alt="Intuit Mailchimp"
+                          style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"
+                        /></span
+                      ></a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+        <script type="text/javascript">
+          /* eslint-disable */
+          (function (_$) {
+            window.fnames = [];
+            window.ftypes = [];
+            fnames[0] = 'EMAIL';
+            ftypes[0] = 'email';
+            fnames[7] = 'MMERGE7';
+            ftypes[7] = 'dropdown';
+            fnames[1] = 'FNAME';
+            ftypes[1] = 'text';
+            fnames[2] = 'LNAME';
+            ftypes[2] = 'text';
+            fnames[3] = 'ADDRESS';
+            ftypes[3] = 'address';
+            fnames[4] = 'PHONE';
+            ftypes[4] = 'phone';
+            fnames[5] = 'BIRTHDAY';
+            ftypes[5] = 'birthday';
+            fnames[6] = 'MMERGE6';
+            ftypes[6] = 'date';
+          })(jQuery);
+          const _mcj = jQuery.noConflict(true);
+          /* eslint-enable */
+        </script>
+      </div>
     </Fragment>
   </Content>
 
@@ -186,8 +328,6 @@ const metadata = {
     </Fragment>
   </CallToAction> -->
 
-
-
   <!-- FAQs Widget ******************* -->
 
   <FAQs
@@ -199,7 +339,7 @@ const metadata = {
       {
         title: 'Why Crushy?',
         description:
-          "Major apps profit by keeping users swiping rather than helping them form meaningful connections—the very problem these apps are meant to solve! Crushy is here to shift the industry back on track.",
+          'Major apps profit by keeping users swiping rather than helping them form meaningful connections—the very problem these apps are meant to solve! Crushy is here to shift the industry back on track.',
       },
       {
         title: 'Who is it for?',
@@ -209,12 +349,12 @@ const metadata = {
       {
         title: 'How do you fight fake profiles and harassment?',
         description:
-          "We have a strict policy against harassment and will take action against any inappropriate behavior. To sign up, you need to verify your phone number. No emails. If we find evidence of fake profiles, we will ban their phone number forever. This should keep idiots away.",
+          'We have a strict policy against harassment and will take action against any inappropriate behavior. To sign up, you need to verify your phone number. No emails. If we find evidence of fake profiles, we will ban their phone number forever. This should keep idiots away.',
       },
       {
         title: 'Why should I use Crushy?',
         description:
-          "Crushy is here to help you, not to bankrupt you. Search is free, and you can use the app without paying anything.",
+          'Crushy is here to help you, not to bankrupt you. Search is free, and you can use the app without paying anything.',
       },
       {
         title: 'How much will premium features cost?',
@@ -229,10 +369,9 @@ const metadata = {
     ]}
   />
 
+  <!-- HighlightedPosts Widget ******* -->
 
-    <!-- HighlightedPosts Widget ******* -->
-
-    <BlogLatestPosts
+  <BlogLatestPosts
     title="Latest Blog Posts"
     information={`The Blog is where we share our thoughts on the app, the future of social networking. We'll also share updates on the app and what we're working on.`}
   />
@@ -250,7 +389,7 @@ const metadata = {
 
   <!-- CallToAction Widget *********** -->
 
-  <CallToAction
+  <!-- <CallToAction
     actions={[
       {
         variant: 'primary',
@@ -261,12 +400,8 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">
-      Be one of the first to experience Crushy!
-    </Fragment>
+    <Fragment slot="title"> Be one of the first to experience Crushy! </Fragment>
 
-    <Fragment slot="subtitle">
-      Sign up for early access now and help shape the app.
-    </Fragment>
-  </CallToAction>
+    <Fragment slot="subtitle"> Sign up for early access now and help shape the app. </Fragment>
+  </CallToAction> -->
 </Layout>
