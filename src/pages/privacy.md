@@ -53,8 +53,17 @@ We use reasonable safeguards to protect your data, including encryption and acce
 
 You must be at least 18 years old to use Crushy.
 
-#### 8. **Contact Us**
+#### 8. **Child Safety and Protection**
+At Crushy, we are committed to creating a safe environment for all users, especially minors. We strictly prohibit any form of Child Sexual Abuse and Exploitation (CSAE), which includes but is not limited to grooming, sextortion, trafficking, or any behavior that endangers or sexually exploits children.
 
-Questions? Contact [hi@crushy.ca](mailto:hi@crushy.ca)
+We also have a zero-tolerance policy for Child Sexual Abuse Material (CSAM). CSAM refers to any visual depiction — including photos, videos, or computer-generated imagery — that shows a minor engaging in sexually explicit conduct. Possession, distribution, or production of CSAM is illegal and strictly forbidden on our platform.
+
+We actively monitor for such content and behavior using automated tools and manual review processes. Any violations will result in immediate account termination and will be reported to relevant authorities, including the National Center for Missing & Exploited Children (NCMEC) and other law enforcement agencies as required.
+
+If you encounter any content or behavior that may involve CSAE or CSAM, please report it immediately through our in-app reporting tools or by emailing [hi@crushy.social](mailto:hi@crushy.social)
+
+#### 9. **Contact Us**
+
+Questions? Contact [hi@crushy.social](mailto:hi@crushy.social)
 
 

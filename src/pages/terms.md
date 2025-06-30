@@ -50,6 +50,6 @@ We may update these Terms. Continued use means you accept the new terms.
 
 #### 9. **Contact**
 
-[hi@crushy.ca](mailto:hi@crushy.ca)
+[hi@crushy.social](mailto:hi@crushy.social)
 
 

@@ -51,7 +51,7 @@ In severe cases (e.g., illegal content), we may act immediately and notify law e
 
 #### 5. **Appeals**
 
-Users may appeal a moderation decision by contacting [hi@crushy.ca](mailto:hi@crushy.ca). We aim to respond within 3 business days.
+Users may appeal a moderation decision by contacting [hi@crushy.social](mailto:hi@crushy.social). We aim to respond within 3 business days.
 
 #### 6. **Feedback & Transparency**
 
