@@ -19,7 +19,7 @@ We collect personal information for the following identified purposes:
 
 **Mandatory Information:**
 * **Basic Profile Data:** Name, age, gender, interests, and relationship preferences (friends, mom-friends, relationship, casual, or mens-only experiences) - collected to create your profile and enable other users to find you
-* **Account Information:** Email address and password - collected to create and secure your account
+* **Account Information:** Phone number - collected to create and secure your account
 
 **Optional Information:**
 * **Extended Profile Data:** Hobbies, lifestyle preferences, body type, hair color, sexual orientation (straight, gay, bi, etc.), drinking/smoking habits, political views - collected to enhance your profile and improve search results
