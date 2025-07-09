@@ -22,7 +22,7 @@ At Crushy, we are committed to creating a safe environment for all users, especi
 
 We also have a zero-tolerance policy for Child Sexual Abuse Material (CSAM). CSAM refers to any visual depiction — including photos, videos, or computer-generated imagery — that shows a minor engaging in sexually explicit conduct. Possession, distribution, or production of CSAM is illegal and strictly forbidden on our platform.
 
-We actively monitor for such content and behavior using automated tools and manual review processes. Any violations will result in immediate account termination and will be reported to relevant authorities, including the National Center for Missing & Exploited Children (NCMEC) and other law enforcement agencies as required.
+We actively monitor for such content and behavior using automated tools and manual review processes. Any violations will result in immediate account termination and will be reported to relevant authorities, including the Canadian Centre for Child Protection (CCCP), the RCMP's National Child Exploitation Coordination Centre (NCECC), and other law enforcement agencies as required.
 
 If you encounter any content or behavior that may involve CSAE or CSAM, please report it immediately through our in-app reporting tools or by emailing [hi@crushy.social](mailto:hi@crushy.social)
 
