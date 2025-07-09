@@ -78,7 +78,7 @@ You are granted a limited, non-exclusive, non-transferable, revocable license to
 - Remove or alter any proprietary notices or labels
 - Use automated tools to access or interact with our app
 
-The "Crushy" name and logo are trademarks of Crushy. Unauthorized use of our trademarks is strictly prohibited and may result in legal action.
+The "Crushy" name and logo are trademarks of Crushy Social Inc. Unauthorized use of our trademarks is strictly prohibited and may result in legal action.
 
 Any feedback, suggestions, or improvements you provide regarding the app may be used by us without compensation or acknowledgment.
 
