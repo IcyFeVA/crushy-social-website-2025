@@ -58,8 +58,8 @@ Some features require payment. All sales are final unless stated otherwise. Subs
 Crushy offers two auto-renewable subscription plans: a weekly and a monthly option. These subscriptions provide access to premium features, which may include features like unlimited likes, advanced filters, or profile boosts. Details about current premium features are available in-app.
 
 - Subscriptions auto-renew unless canceled at least 24 hours before the end of the current period.
-- You can manage or cancel your subscription at any time via your Apple ID account settings.
-- Payments are charged to your Apple/Google account at confirmation of purchase.
+- You can manage or cancel your subscription anytime through your device’s app store account settings (Apple ID or Google Play).
+- Payment is charged to your Apple ID or Google Play account at confirmation of purchase.
 - Prices are clearly shown in-app and may vary by region or promotional offer.
 
 By subscribing, you agree to be billed on a recurring basis until you cancel. No refunds are provided for unused portions of a subscription term.
