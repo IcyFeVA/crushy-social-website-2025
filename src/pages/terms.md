@@ -1,11 +1,11 @@
 ---
-title: 'Terms and Conditions'
+title: 'Terms of Use'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
 _Last updated_: July 15, 2025
 
-Please read these terms and conditions carefully before using Our Service.
+Please read these terms of use carefully before using Our Service.
 
 
 **Effective Date:** July 15, 2025
