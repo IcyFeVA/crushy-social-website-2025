@@ -3,12 +3,12 @@ title: 'Terms and Conditions'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated_: July 8, 2025
+_Last updated_: July 15, 2025
 
 Please read these terms and conditions carefully before using Our Service.
 
 
-**Effective Date:** July 8, 2025
+**Effective Date:** July 15, 2025
 
 Welcome to Crushy. These Terms govern your use of our app and services. By using Crushy, you agree to these Terms.
 
@@ -53,6 +53,16 @@ To ensure user safety and compliance with our 18+ age requirement, we may requir
 #### 8. **Paid Features**
 
 Some features require payment. All sales are final unless stated otherwise. Subscriptions auto-renew unless canceled through your app store account.
+
+#### 8.1 **Premium Subscription Terms**
+Crushy offers two auto-renewable subscription plans: a weekly and a monthly option. These subscriptions provide access to premium features, which may include features like unlimited likes, advanced filters, or profile boosts. Details about current premium features are available in-app.
+
+- Subscriptions auto-renew unless canceled at least 24 hours before the end of the current period.
+- You can manage or cancel your subscription at any time via your Apple ID account settings.
+- Payments are charged to your Apple/Google account at confirmation of purchase.
+- Prices are clearly shown in-app and may vary by region or promotional offer.
+
+By subscribing, you agree to be billed on a recurring basis until you cancel. No refunds are provided for unused portions of a subscription term.
 
 #### 9. **Third-Party Services**
 
