@@ -10,6 +10,7 @@ import Image from '~/components/common/Image.astro';
 
 import googlePlay from '~/assets/images/google-play.png';
 import appStore from '~/assets/images/app-store.png';
+import Features from '~/components/widgets/Features.astro';
 
 const metadata = {
   title: 'Crushy — The friend and date-finding app that puts people first.',
@@ -56,21 +57,7 @@ const metadata = {
       </Fragment>
   </Hero>
 
-  <!-- About Section ***************** -->
-  <Content id="about" tagline="About Crushy" title="Meeting people shouldn't suck." classes={{ container: 'max-w-6xl' }}>
-    <Fragment slot="content">
-      Crushy was born out of one simple truth: meeting people shouldn't suck. Whether you're looking for <i>a friend</i>, <i>a
-      mom-friend</i>, <i>a date</i>, or just someone who also thinks pineapple on pizza is a crime, Crushy connects you, your way.
-      <br /><br />
-      We ditched the algorithms, added free search, new modes, and perks (literally—discounts at cool spots), and made an app that actually feels
-      good to use.
-      <br /><br />
-      Headquartered in Vancouver, Canada (yes, we say sorry a lot), Crushy is on a mission to help people connect in meaningful, fun,
-      and refreshingly new ways.
-    </Fragment>
-  </Content>
-
-  <!-- Join Waitlist Section ********* -->
+      <!-- Join Waitlist Section ********* -->
   <Content
     tagline="Join the Waitlist"
     title="Be first to know when we expand"
@@ -214,6 +201,22 @@ const metadata = {
     </Fragment>
   </Content>
 
+  <!-- About Section ***************** -->
+  <Content id="about" tagline="About Crushy" title="Meeting people shouldn't suck." classes={{ container: 'max-w-6xl' }}>
+    <Fragment slot="content">
+      Crushy was born out of one simple truth: meeting people shouldn't suck. Whether you're looking for <i>a friend</i>, <i>a
+      mom-friend</i>, <i>a date</i>, or just someone who also thinks pineapple on pizza is a crime, Crushy connects you, your way.
+      <br /><br />
+      We ditched the algorithms, added free search, new modes, and perks (literally—discounts at cool spots), and made an app that actually feels
+      good to use.
+      <br /><br />
+      Headquartered in Vancouver, Canada (yes, we say sorry a lot), Crushy is on a mission to help people connect in meaningful, fun,
+      and refreshingly new ways.
+    </Fragment>
+  </Content>
+
+
+
   <!-- WebSummit Section ************* -->
   <!-- <section class="bg-gray-900 text-white py-16">
     <div class="container mx-auto px-4 md:px-16">
@@ -258,64 +261,7 @@ const metadata = {
     </div>
   </section> -->
 
-  <!-- Features Widget *************** -->
 
-  <!-- <Features
-    id="features"
-    tagline="Paid in other apps, free with Crushy"
-    title="What you will get with Crushy"
-    subtitle="It is important to us that you get the tools you need to find your people."
-    items={[
-      {
-        title: 'Free Search and Powerful Filters',
-        description:
-          'Discover people who share your quirks, passions, and vibes—Crushy makes connecting personal and fun!.',
-        icon: 'tabler:search',
-      },
-      {
-        title: 'Two modes - Surf and Dive',
-        description:
-          'Surf mode is image-driven for casual connections. Dive mode prioritizes personality with pixelated photos until the conversation warms up.',
-        icon: 'tabler:toggle-right',
-      },
-      {
-        title: 'Free features for women',
-        description:
-          'Exclusive features are available to women (and those who identify as such). Features like viewing profiles without being seen, seeing who viewed your profile, and more.',
-        icon: 'tabler:woman',
-      },
-      {
-        title: 'Better privacy controls',
-        description:
-          'Only show your profile to people you want to see it. You can also hide your profile from specific people.',
-        icon: 'tabler:lock',
-      },
-      {
-        title: 'Worldwide, for free',
-        description:
-          "Search for people anywhere in the world, for free. You are not limited to your city or country.",
-        icon: 'tabler:location',
-      },
-      {
-        title: 'Control who YOU want to see',
-        description:
-          'Choose the type of people you want to see. You can search for people by gender, sexual orientation, interests, and more.',
-        icon: 'tabler:eye',
-      },
-      {
-        title: 'Inclusivity',
-        description:
-          'No matter who you are, Crushy is for you. We want to build a community where everyone feels welcome. We are working on making Crushy available in more languages and countries.',
-        icon: 'tabler:gender-transgender',
-      },
-      {
-        title: 'AI features',
-        description:
-          'Not sure what to say? Our AI will help you write a message to someone you like. Same goes for finding the right words to describe yourself in your profile.',
-        icon: 'tabler:ai',
-      },
-    ]}
-  /> -->
 
   <!-- <div class="text-center text-gray-500 text-xl">
     And much more!
@@ -350,43 +296,104 @@ const metadata = {
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into why Crushy is the best friend and date-finding app."
-    tagline="FAQs"
+    title="Why Choose Crushy?"
+    subtitle="Most dating and social apps profit by keeping users endlessly swiping, rather than actually helping people connect."
+    tagline="Key Features & Benefits"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why Crushy?',
+        title: 'Real Connections First',
         description:
-          'Major apps profit by keeping users swiping rather than helping them form meaningful connections—the very problem these apps are meant to solve! Crushy is here to shift the industry back on track.',
+          'Built to foster real friendships and relationships—no algorithms designed to keep you swiping endlessly.',
       },
       {
-        title: 'Who is it for?',
+        title: 'Strict Safety & Anti-Fraud',
         description:
-          'Everyone, everywhere, all at once. As long as it is in Vancouver, Canada. Of course, we are aiming for expansion to other cities and countries.',
+          'Phone number required to sign up (no emails). Fake profiles and harassment are not tolerated—verified abusers and scammers are permanently banned.',
       },
       {
-        title: 'How do you fight fake profiles and harassment?',
+        title: 'Affordable',
         description:
-          'We have a strict policy against harassment and will take action against any inappropriate behavior. To sign up, you need to verify your phone number. No emails. If we find evidence of fake profiles, we will ban their phone number forever. This should keep idiots away.',
+          'Search and core app functions are free. Premium features cost far less than mainstream competitors.',
       },
       {
-        title: 'Why should I use Crushy?',
+        title: 'Transparent & Community-Driven',
         description:
-          'Crushy is here to help you, not to bankrupt you. Search is free, and you can use the app without paying anything.',
+          'Blog shares updates, community insights, and the roadmap for the future of social networking.',
       },
       {
-        title: 'How much will premium features cost?',
+        title: 'Local First',
         description:
-          "Our premium features will be available for a low monthly fee (much lower than other apps). We're still working on the exact pricing, but it will be affordable for everyone.",
+          "Launched in Vancouver; committed to expanding across cities and countries as demand grows.",
       },
       {
-        title: 'When and where will Crushy be available?',
+        title: 'Friends & More',
         description:
-          "We're currently working on the app and will be available in Vancouver, Canada first. We're aiming for a release in September 2025.",
+          "Crushy is here to connect you with newcomers, friends, dates, and everything in between. Whether you're looking for a buddy to grab coffee with or someone to share your life with, Crushy has you covered.",
       },
     ]}
   />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Paid in other apps, free with Crushy"
+    title="What you will get with Crushy"
+    subtitle="It is important to us that you get the tools you need to find your people."
+    items={[
+      {
+        title: 'Free Search and Powerful Filters',
+        description:
+          'Discover people who share your quirks, passions, and vibes—Crushy makes connecting personal and fun!.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Three modes - Surf, Dive, and Crushr',
+        description:
+          'Surf mode is image-driven for casual connections. Dive mode prioritizes personality with pixelated photos until the conversation warms up. Crushr mode is for men - like Grindr, but more affordable.',
+        icon: 'tabler:toggle-right',
+      },
+      {
+        title: 'Free features for women',
+        description:
+          'Exclusive features are available to women (and those who identify as such). Features like viewing profiles without being seen, seeing who viewed your profile, and more.',
+        icon: 'tabler:woman',
+      },
+      // {
+      //   title: 'Better privacy controls',
+      //   description:
+      //     'Only show your profile to people you want to see it. You can also hide your profile from specific people.',
+      //   icon: 'tabler:lock',
+      // },
+      {
+        title: 'Worldwide, for free',
+        description:
+          "Search for people anywhere in the world, for free. You are not limited to your city or country. (this feature is coming soon)",
+        icon: 'tabler:location',
+      },
+      {
+        title: 'Control who YOU want to see',
+        description:
+          'Choose the type of people you want to see. You can search for people by gender, sexual orientation, interests, and more.',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'Inclusivity',
+        description:
+          'No matter who you are, Crushy is for you. We want to build a community where everyone feels welcome. We are working on making Crushy available in more languages and countries.',
+        icon: 'tabler:gender-transgender',
+      },
+      // {
+      //   title: 'AI features',
+      //   description:
+      //     'Not sure what to say? Our AI will help you write a message to someone you like. Same goes for finding the right words to describe yourself in your profile.',
+      //   icon: 'tabler:ai',
+      // },
+    ]}
+  />
+
+
 
   <!-- HighlightedPosts Widget ******* -->
 
