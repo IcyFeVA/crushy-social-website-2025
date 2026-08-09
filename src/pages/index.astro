@@ -19,7 +19,14 @@ const year = new Date().getFullYear();
       <header class="rail reveal" style="--d: 0ms">
         <span class="wordmark">Sorry, eh</span>
         <span class="rail-meta">
-          <span class="place">Vancouver, Canada</span>
+          <span class="place">
+            Vancouver
+            <span class="tick" aria-hidden="true"></span>
+            <!-- Deliberately empty: this is a static page, so any time rendered
+                 here would be the time of the last deploy. CSS holds the width
+                 open until the first tick lands. -->
+            <span class="clock" data-clock></span>
+          </span>
           <!-- <span class="status"><span class="tick" aria-hidden="true"></span>Coming soon</span> -->
         </span>
       </header>
@@ -88,8 +95,43 @@ const year = new Date().getFullYear();
     sync();
   };
 
+  // Vancouver time, read off the visitor's own clock and shifted into
+  // America/Vancouver by Intl — the timezone is fixed, the moment is not, and a
+  // static page has no server to ask.
+  let clockTimer: number | undefined;
+
+  const bindClock = () => {
+    window.clearTimeout(clockTimer);
+
+    const el = document.querySelector<HTMLElement>('[data-clock]');
+    if (!el) return;
+
+    const format = new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'America/Vancouver',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hourCycle: 'h23',
+    });
+
+    const tick = () => {
+      el.textContent = format.format(new Date());
+      // Re-aimed at the next whole second each time instead of a fixed 1000ms
+      // interval: the reading stays true after a background tab has been
+      // throttled, and the seconds turn over on the second rather than
+      // drifting a fraction later with every beat.
+      clockTimer = window.setTimeout(tick, 1000 - (Date.now() % 1000));
+    };
+
+    tick();
+  };
+
   bindModeSwitch();
-  document.addEventListener('astro:page-load', bindModeSwitch);
+  bindClock();
+  document.addEventListener('astro:page-load', () => {
+    bindModeSwitch();
+    bindClock();
+  });
 </script>
 
 <style>
@@ -237,7 +279,29 @@ const year = new Date().getFullYear();
   }
 
   .place {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
     color: var(--muted);
+  }
+
+  /* The one moving thing on the page, so it carries a little more weight than
+     the label it hangs off. Tabular figures keep the digits from jostling the
+     line every time a 1 comes round. */
+  .clock {
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+
+  /* Before the script runs the clock is empty, and an empty inline box would
+     let the rail settle at one width and then jump to another. A hidden dummy
+     reading holds exactly the space the real one will need — same tabular
+     figures, same string length — so the first tick appears in place. */
+  .clock:empty::before {
+    content: '00:00:00';
+    visibility: hidden;
   }
 
   /* The page's status, and its first colour: visible on load, on every device,
