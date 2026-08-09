@@ -51,10 +51,46 @@ const year = new Date().getFullYear();
 
       <footer class="foot">
         <span>&copy; {year} Crushy Social Inc.</span>
+
+        <button type="button" class="mode" role="switch" aria-checked="false" aria-label="Dark mode" data-mode-switch>
+          <span class="mode-label mode-light">Light</span>
+          <span class="mode-track" aria-hidden="true"><span class="mode-knob"></span></span>
+          <span class="mode-label mode-dark">Dark</span>
+        </button>
       </footer>
     </div>
   </div>
 </Layout>
+
+<script>
+  // BasicScripts binds the site-wide `data-aw-toggle-color-scheme` handler once
+  // and guards itself with `window.basic_script`, so it is never re-bound after
+  // a view transition. This page owns its switch instead, writing the same
+  // `localStorage.theme` key so it stays in step with the toggle on /app.
+  const bindModeSwitch = () => {
+    const el = document.querySelector<HTMLButtonElement>('[data-mode-switch]');
+    if (!el || el.dataset.bound) return;
+    el.dataset.bound = 'true';
+
+    const sync = () =>
+      el.setAttribute('aria-checked', document.documentElement.classList.contains('dark') ? 'true' : 'false');
+
+    el.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      try {
+        localStorage.theme = dark ? 'dark' : 'light';
+      } catch {
+        // Storage blocked; the switch still works for this visit.
+      }
+      sync();
+    });
+
+    sync();
+  };
+
+  bindModeSwitch();
+  document.addEventListener('astro:page-load', bindModeSwitch);
+</script>
 
 <style>
   .holding {
@@ -344,9 +380,110 @@ const year = new Date().getFullYear();
   .foot {
     --band: 16%;
 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.875rem 1.5rem;
     padding-block: clamp(1.5rem, 3vw, 2.25rem);
     font-size: 0.8125rem;
     color: var(--muted);
+  }
+
+  /* The mode switch is a bead on a wire: the hairline the rest of the page is
+     built from, at its smallest scale. */
+  .mode {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    /* Padding brings the hit area to 32px; the matching negative margin keeps
+       it from changing the footer's rhythm. */
+    margin-block: -0.5rem;
+    margin-inline: 0;
+    padding-block: 0.5rem;
+    padding-inline: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* State comes off the .dark class rather than aria-checked, so the switch
+     still shows the right mode if the script never runs. */
+  .mode-label {
+    transition: color 240ms ease;
+  }
+
+  .mode-light {
+    color: var(--ink);
+  }
+
+  .mode-dark {
+    color: var(--muted);
+  }
+
+  :global(.dark) .mode-light {
+    color: var(--muted);
+  }
+
+  :global(.dark) .mode-dark {
+    color: var(--ink);
+  }
+
+  .mode-track {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex: none;
+    width: 2.5rem;
+    height: 0.4375rem;
+  }
+
+  .mode-track::before {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    top: 50%;
+    height: 1px;
+    transform: translateY(-50%);
+    background-image: linear-gradient(90deg, var(--rule-a) 0%, var(--rule-b) 100%),
+      linear-gradient(90deg, var(--rule), var(--rule));
+    background-repeat: no-repeat;
+    background-size:
+      0% 100%,
+      100% 100%;
+    transition: background-size 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mode-knob {
+    position: relative;
+    width: 0.4375rem;
+    height: 0.4375rem;
+    flex: none;
+    border-radius: 50%;
+    background-color: var(--accent);
+    transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  :global(.dark) .mode-knob {
+    transform: translateX(calc(2.5rem - 0.4375rem));
+  }
+
+  /* Same gesture as the handoff, one scale down: approaching runs the colour
+     along the wire. */
+  .mode:hover .mode-track::before,
+  .mode:focus-visible .mode-track::before {
+    background-size:
+      100% 100%,
+      100% 100%;
+  }
+
+  .mode:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 6px;
+    border-radius: 2px;
   }
 
   /* One authored moment: the page settles into place on load. */
@@ -377,7 +514,10 @@ const year = new Date().getFullYear();
     }
 
     .handoff::before,
-    .foot::before {
+    .foot::before,
+    .mode-label,
+    .mode-knob,
+    .mode-track::before {
       transition: none;
     }
   }
