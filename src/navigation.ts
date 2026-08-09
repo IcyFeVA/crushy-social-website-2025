@@ -59,13 +59,11 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: "We’re here to help you connect, one vibe at a time. Reach out to us anytime.",
+      title: 'We’re here to help you connect, one vibe at a time. Reach out to us anytime.',
     },
     {
       title: 'Platform',
-      links: [
-        { text: 'Features', href: "/#features" },
-      ],
+      links: [{ text: 'Features', href: getPermalink('/#features') }],
     },
     {
       title: 'Support',

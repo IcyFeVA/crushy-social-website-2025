@@ -11,5 +11,24 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    { "source": "/about", "destination": "/app/about", "permanent": true },
+    { "source": "/beta-guide", "destination": "/app/beta-guide", "permanent": true },
+    { "source": "/blog", "destination": "/app/blog", "permanent": true },
+    { "source": "/blog/:path*", "destination": "/app/blog/:path*", "permanent": true },
+    { "source": "/category/:path*", "destination": "/app/category/:path*", "permanent": true },
+    { "source": "/contact", "destination": "/app/contact", "permanent": true },
+    { "source": "/content", "destination": "/app/content", "permanent": true },
+    { "source": "/delete-account", "destination": "/app/delete-account", "permanent": true },
+    { "source": "/homes/:path*", "destination": "/app/homes/:path*", "permanent": true },
+    { "source": "/landing/:path*", "destination": "/app/landing/:path*", "permanent": true },
+    { "source": "/pricing", "destination": "/app/pricing", "permanent": true },
+    { "source": "/privacy", "destination": "/app/privacy", "permanent": true },
+    { "source": "/research/:path*", "destination": "/app/research/:path*", "permanent": true },
+    { "source": "/services", "destination": "/app/services", "permanent": true },
+    { "source": "/tag/:path*", "destination": "/app/tag/:path*", "permanent": true },
+    { "source": "/terms", "destination": "/app/terms", "permanent": true },
+    { "source": "/why-the-world-needs-crushy", "destination": "/app/why-the-world-needs-crushy", "permanent": true }
   ]
 }

@@ -15,6 +15,12 @@ const createPath = (...params: string[]) => {
 
 const BASE_PATHNAME = SITE.base || '/';
 
+/**
+ * The Crushy app site lives under this sub-path — the root is the Crushy Social company site.
+ * Page permalinks are prefixed with it; assets in `public/` (rss.xml, sitemap) stay at the root.
+ */
+export const APP_PATHNAME = createPath(BASE_PATHNAME, 'app');
+
 export const cleanSlug = (text = '') =>
   trimSlash(text)
     .split('/')
@@ -101,7 +107,7 @@ export const getAsset = (path: string): string =>
     .join('/');
 
 /** */
-const definitivePermalink = (permalink: string): string => createPath(BASE_PATHNAME, permalink);
+const definitivePermalink = (permalink: string): string => createPath(APP_PATHNAME, permalink);
 
 /** */
 export const applyGetPermalinks = (menu: object = {}) => {

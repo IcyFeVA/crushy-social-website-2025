@@ -1,24 +1,243 @@
 ---
 import Layout from '~/layouts/Layout.astro';
-import { getHomePermalink } from '~/utils/permalinks';
+import { getPermalink } from '~/utils/permalinks';
 
-const title = `Error 404`;
+const metadata = {
+  title: 'Page not found',
+  ignoreTitleTemplate: true,
+  robots: { index: false, follow: false },
+};
+
+const appHref = getPermalink('/');
 ---
 
-<Layout metadata={{ title }}>
-  <section class="flex items-center h-full p-16">
-    <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-      <div class="max-w-md text-center">
-        <h2 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">Error</span>
-          <span class="text-primary">404</span>
-        </h2>
-        <p class="text-3xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
-          But dont worry, you can find plenty of other things on our homepage.
+<Layout metadata={metadata}>
+  <div class="holding">
+    <div class="shell">
+      <header class="rail">
+        <a class="wordmark" href="/">Crushy Social</a>
+        <span class="place">Vancouver, Canada</span>
+      </header>
+
+      <main class="stage">
+        <p class="kicker"><span class="tick" aria-hidden="true"></span>Error 404</p>
+
+        <h1 class="statement">This page moved, or never existed.</h1>
+
+        <p class="lede">
+          The Crushy app now lives at <span class="nowrap">crushy.social/app</span>. If you followed an old link, that's
+          probably where you were headed.
         </p>
-        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Back to homepage</a>
-      </div>
+
+        <div class="choices">
+          <a class="choice" href={appHref}>
+            Go to the Crushy app site
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M4 12h15m0 0-6-6m6 6-6 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <a class="choice choice--quiet" href="/">
+            Crushy Social home
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M4 12h15m0 0-6-6m6 6-6 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </div>
+      </main>
+
+      <footer class="foot">
+        <span>&copy; {new Date().getFullYear()} Crushy Social Inc.</span>
+      </footer>
     </div>
-  </section>
+  </div>
 </Layout>
+
+<style>
+  .holding {
+    --ink: rgb(35 21 61);
+    --ground: rgb(250 248 252);
+    --muted: rgb(108 98 126);
+    --rule: rgb(35 21 61 / 0.14);
+    --accent: rgb(203 7 150);
+    --bloom: rgb(125 33 229 / 0.07);
+
+    position: relative;
+    min-height: 100svh;
+    background-color: var(--ground);
+    color: var(--ink);
+    overflow: hidden;
+  }
+
+  :global(.dark) .holding {
+    --ink: rgb(240 236 246);
+    --ground: rgb(21 8 34);
+    --muted: rgb(178 168 194);
+    --rule: rgb(240 236 246 / 0.16);
+    --accent: rgb(240 116 205);
+    --bloom: rgb(194 46 240 / 0.14);
+  }
+
+  .holding::before {
+    content: '';
+    position: absolute;
+    inset: -20% -10% auto -25%;
+    height: 120%;
+    background: radial-gradient(58% 52% at 22% 34%, var(--bloom), transparent 68%);
+    pointer-events: none;
+  }
+
+  .shell {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    max-width: 78rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.5rem, 6vw, 6rem);
+  }
+
+  .rail {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: clamp(1.75rem, 4vw, 2.75rem);
+    font-size: 0.875rem;
+  }
+
+  .wordmark {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .wordmark:hover {
+    color: var(--accent);
+  }
+
+  .place {
+    color: var(--muted);
+  }
+
+  .stage {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: clamp(3.5rem, 10vw, 7rem);
+  }
+
+  .kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .tick {
+    width: 1.75rem;
+    height: 1px;
+    background-color: currentColor;
+  }
+
+  .statement {
+    margin: 0;
+    max-width: 16ch;
+    font-size: clamp(2.25rem, 6.5vw, 4.25rem);
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+  }
+
+  .lede {
+    margin: clamp(1.5rem, 3vw, 2rem) 0 0;
+    max-width: 44ch;
+    font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+    line-height: 1.55;
+    color: var(--muted);
+    text-wrap: pretty;
+  }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+
+  .choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 4vw, 2.5rem);
+    margin-top: clamp(2rem, 4vw, 2.75rem);
+  }
+
+  .choice {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 0.375rem;
+    border-bottom: 1px solid var(--accent);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: inherit;
+    text-decoration: none;
+    transition:
+      color 200ms ease,
+      border-color 200ms ease;
+  }
+
+  .choice--quiet {
+    border-bottom-color: var(--rule);
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .choice:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .choice:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 6px;
+    border-radius: 2px;
+  }
+
+  .arrow {
+    width: 0.9em;
+    height: 0.9em;
+    flex: none;
+    transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .choice:hover .arrow {
+    transform: translateX(0.35em);
+  }
+
+  .foot {
+    padding-block: clamp(1.5rem, 3vw, 2.25rem);
+    border-top: 1px solid var(--rule);
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .arrow {
+      transition: none;
+    }
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { getPermalink } from '~/utils/permalinks';
 ---
 
 <section
@@ -10,13 +11,12 @@ import { Icon } from 'astro-icon/components';
   Crushy is more than just an app—it’s a mission to change the market once and for all.
   <br />
   <br />
-  In today's fast-paced world, meeting new people can be daunting, and premium features shouldn’t be a barrier to forming meaningful relationships. Crushy is your ally in the quest for friendship and love, offering you the tools to connect without breaking the bank.
+  In today's fast-paced world, meeting new people can be daunting, and premium features shouldn’t be a barrier to forming
+  meaningful relationships. Crushy is your ally in the quest for friendship and love, offering you the tools to connect without
+  breaking the bank.
   <br />
   <br />
   Discover the heart and soul behind Crushy in our first blog post: <br />
-  <a href="/why-the-world-needs-crushy" class="text-primary">Why the World Needs Crushy</a>.
+  <a href={getPermalink('/why-the-world-needs-crushy')} class="text-primary">Why the World Needs Crushy</a>.
   <br />
-
-
-
 </section>

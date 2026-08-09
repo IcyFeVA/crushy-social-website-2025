@@ -1,4 +1,5 @@
 ---
+import { getPermalink } from '~/utils/permalinks';
 import { getImage } from 'astro:assets';
 import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
@@ -17,19 +18,11 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    tagline="About Crushy"
-    image={{ src: '~/assets/images/hero-friends1.png', alt: 'Hero Image' }}
-  >
-    <Fragment slot="title">
-      Long story short
-    </Fragment>
+  <Hero tagline="About Crushy" image={{ src: '~/assets/images/hero-friends1.png', alt: 'Hero Image' }}>
+    <Fragment slot="title"> Long story short </Fragment>
   </Hero>
 
   <CrushyLongStoryShort />
-
-
-  
 
   <!-- Stats Widget ****************** -->
 
@@ -153,7 +146,7 @@ const metadata = {
     isReversed={true}
     callToAction={{
       text: 'See more',
-      href: '/',
+      href: getPermalink('/'),
     }}
     items={[
       {
