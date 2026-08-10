@@ -58,43 +58,12 @@ const year = new Date().getFullYear();
 
       <footer class="foot">
         <span>&copy; {year} Crushy Social Inc.</span>
-
-        <button type="button" class="mode" role="switch" aria-checked="false" aria-label="Dark mode" data-mode-switch>
-          <span class="mode-label mode-light">Light</span>
-          <span class="mode-track" aria-hidden="true"><span class="mode-knob"></span></span>
-          <span class="mode-label mode-dark">Dark</span>
-        </button>
       </footer>
     </div>
   </div>
 </Layout>
 
 <script>
-  // BasicScripts binds the site-wide `data-aw-toggle-color-scheme` handler once
-  // and guards itself with `window.basic_script`, so it is never re-bound after
-  // a view transition. This page owns its switch instead, writing the same
-  // `localStorage.theme` key so it stays in step with the toggle on /app.
-  const bindModeSwitch = () => {
-    const el = document.querySelector<HTMLButtonElement>('[data-mode-switch]');
-    if (!el || el.dataset.bound) return;
-    el.dataset.bound = 'true';
-
-    const sync = () =>
-      el.setAttribute('aria-checked', document.documentElement.classList.contains('dark') ? 'true' : 'false');
-
-    el.addEventListener('click', () => {
-      const dark = document.documentElement.classList.toggle('dark');
-      try {
-        localStorage.theme = dark ? 'dark' : 'light';
-      } catch {
-        // Storage blocked; the switch still works for this visit.
-      }
-      sync();
-    });
-
-    sync();
-  };
-
   // Vancouver time, read off the visitor's own clock and shifted into
   // America/Vancouver by Intl — the timezone is fixed, the moment is not, and a
   // static page has no server to ask.
@@ -126,74 +95,42 @@ const year = new Date().getFullYear();
     tick();
   };
 
-  bindModeSwitch();
   bindClock();
-  document.addEventListener('astro:page-load', () => {
-    bindModeSwitch();
-    bindClock();
-  });
+  document.addEventListener('astro:page-load', bindClock);
 </script>
 
 <style>
+  /* The company page is dark, full stop — it does not follow the shared theme.
+     That is done here in the page's own tokens rather than by forcing `.dark`
+     onto <html>: the class is global state shared with /app, view transitions
+     carry it between pages, and BasicScripts writes it from `localStorage`.
+     Owning the palette locally leaves all of that untouched, so /app keeps
+     following the system setting and its own toggle. 404.astro still ships the
+     light-and-dark pair. */
   .holding {
     /* Surfaces */
-    --ground: rgb(250 248 252);
-    --ground-0: rgb(250 248 252 / 0);
-
-    /* Text */
-    --ink: rgb(35 21 61);
-    --muted: rgb(92 80 116);
-
-    /* Accent — marks, lines and focus carry the pure brand magenta;
-       accent *text* uses the deepened tone so it clears 4.5:1 over the wash. */
-    --accent: rgb(203 7 150);
-    --accent-ink: rgb(158 12 120);
-
-    /* Hairline system: a spectrum band that dissolves into a neutral rule.
-       Near-opaque, because a 1px line only reads as coloured at full strength. */
-    --rule: rgb(35 21 61 / 0.16);
-    --rule-a: rgb(125 33 229 / 0.95);
-    --rule-b: rgb(203 7 150 / 0.8);
-    --rule-b-0: rgb(203 7 150 / 0);
-
-    /* Atmosphere. On paper the halo hues are *lighter* than the ground so the
-       wash reads as light gathering, not as a stain; the brand hues themselves
-       would only darken it. */
-    --halo-cool: rgb(168 104 255 / 0.16);
-    --halo-cool-0: rgb(168 104 255 / 0);
-    --halo-warm: rgb(255 138 220 / 0.14);
-    --halo-warm-0: rgb(255 138 220 / 0);
-
-    --grain: 0.035;
-
-    --selection-bg: rgb(203 7 150);
-    --selection-ink: rgb(255 253 255);
-
-    position: relative;
-    min-height: 100svh;
-    background-color: var(--ground);
-    color: var(--ink);
-    overflow: hidden;
-  }
-
-  /* Dark is composed, not inverted: the violet is lifted so it reads as light
-     against the aubergine ground instead of disappearing into it. */
-  :global(.dark) .holding {
     --ground: rgb(21 8 34);
     --ground-0: rgb(21 8 34 / 0);
 
+    /* Text */
     --ink: rgb(240 236 246);
     --muted: rgb(186 176 202);
 
+    /* Accent — the brand magenta, lifted until it reads as light against the
+       aubergine ground instead of sinking into it. */
     --accent: rgb(240 116 205);
     --accent-ink: rgb(246 136 214);
 
+    /* Hairline system: a spectrum band that dissolves into a neutral rule.
+       Near-opaque, because a 1px line only reads as coloured at full strength. */
     --rule: rgb(240 236 246 / 0.18);
     --rule-a: rgb(168 104 255 / 0.95);
     --rule-b: rgb(240 116 205 / 0.85);
     --rule-b-0: rgb(240 116 205 / 0);
 
-    /* Here the brand violet *is* the light, so it stays. */
+    /* Atmosphere. Down here the brand violet *is* the light, so it stays at
+       full hue; the warm halo is only a trace, enough to keep the wash from
+       reading as a single flat colour. */
     --halo-cool: rgb(125 33 229 / 0.34);
     --halo-cool-0: rgb(125 33 229 / 0);
     --halo-warm: rgb(240 116 205 / 0.1);
@@ -204,6 +141,23 @@ const year = new Date().getFullYear();
 
     --selection-bg: rgb(240 116 205);
     --selection-ink: rgb(21 8 34);
+
+    position: relative;
+    min-height: 100svh;
+    background-color: var(--ground);
+    color: var(--ink);
+    overflow: hidden;
+  }
+
+  /* .holding covers the body box, but the canvas behind it belongs to the root,
+     and under a light theme that is still the AstroWind paper. Painting it here
+     keeps overscroll rubber-banding dark, and `color-scheme` matches the
+     scrollbars and the browser's own chrome to the page. Safe to reach out of
+     the component: Astro emits this page's styles as their own stylesheet,
+     linked from / and nowhere else. */
+  :global(html) {
+    color-scheme: dark;
+    background-color: rgb(21 8 34);
   }
 
   /* :global keeps Astro from appending its scope attribute after the
@@ -454,102 +408,6 @@ const year = new Date().getFullYear();
     color: var(--muted);
   }
 
-  /* The mode switch is a bead on a wire: the hairline the rest of the page is
-     built from, at its smallest scale. */
-  .mode {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.625rem;
-    /* Padding brings the hit area to 32px; the matching negative margin keeps
-       it from changing the footer's rhythm. */
-    margin-block: -0.5rem;
-    margin-inline: 0;
-    padding-block: 0.5rem;
-    padding-inline: 0;
-    border: 0;
-    background: none;
-    font: inherit;
-    color: inherit;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  /* State comes off the .dark class rather than aria-checked, so the switch
-     still shows the right mode if the script never runs. */
-  .mode-label {
-    transition: color 240ms ease;
-  }
-
-  .mode-light {
-    color: var(--ink);
-  }
-
-  .mode-dark {
-    color: var(--muted);
-  }
-
-  :global(.dark) .mode-light {
-    color: var(--muted);
-  }
-
-  :global(.dark) .mode-dark {
-    color: var(--ink);
-  }
-
-  .mode-track {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    flex: none;
-    width: 2.5rem;
-    height: 0.4375rem;
-  }
-
-  .mode-track::before {
-    content: '';
-    position: absolute;
-    inset-inline: 0;
-    top: 50%;
-    height: 1px;
-    transform: translateY(-50%);
-    background-image: linear-gradient(90deg, var(--rule-a) 0%, var(--rule-b) 100%),
-      linear-gradient(90deg, var(--rule), var(--rule));
-    background-repeat: no-repeat;
-    background-size:
-      0% 100%,
-      100% 100%;
-    transition: background-size 420ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .mode-knob {
-    position: relative;
-    width: 0.4375rem;
-    height: 0.4375rem;
-    flex: none;
-    border-radius: 50%;
-    background-color: var(--accent);
-    transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  :global(.dark) .mode-knob {
-    transform: translateX(calc(2.5rem - 0.4375rem));
-  }
-
-  /* Same gesture as the handoff, one scale down: approaching runs the colour
-     along the wire. */
-  .mode:hover .mode-track::before,
-  .mode:focus-visible .mode-track::before {
-    background-size:
-      100% 100%,
-      100% 100%;
-  }
-
-  .mode:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 6px;
-    border-radius: 2px;
-  }
-
   /* One authored moment: the page settles into place on load. */
   @keyframes holding-rise {
     from {
@@ -578,10 +436,7 @@ const year = new Date().getFullYear();
     }
 
     .handoff::before,
-    .foot::before,
-    .mode-label,
-    .mode-knob,
-    .mode-track::before {
+    .foot::before {
       transition: none;
     }
   }
