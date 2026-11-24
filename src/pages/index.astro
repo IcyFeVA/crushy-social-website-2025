@@ -58,6 +58,29 @@ const year = new Date().getFullYear();
         </span>
       </a>
 
+      <a
+        target="_blank"
+        rel="noopener"
+        class="handoff reveal"
+        style="--d: 320ms"
+        href="https://www.figma.com/community/plugin/1665065850754195680/entropy-kit"
+      >
+        <span class="handoff-text">
+          <span class="handoff-label">Looking for our Figma Plugin?</span>
+          <span class="handoff-action">
+            Get Entropy Kit on Figma
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M4 12h15m0 0-6-6m6 6-6 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </span>
+        </span>
+      </a>
+
       <footer class="foot">
         <span>&copy; {year} Crushy Social Inc.</span>
       </footer>
@@ -376,8 +399,7 @@ const year = new Date().getFullYear();
       color 200ms ease;
   }
 
-  /* Approaching the only action on the page runs the colour the full width of
-     its rule. */
+  /* Approaching an action runs the colour the full width of its rule. */
   .handoff:hover::before,
   .handoff:focus-visible::before {
     background-size:
